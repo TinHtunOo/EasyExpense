@@ -43,10 +43,7 @@ export default function ExpenseForm({ onAdd }: ExpenseFormProps) {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="bg-white p-4 rounded-lg shadow mb-6 space-y-4"
-    >
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <label className="block text-sm font-medium mb-1">Title</label>
         <input
@@ -100,7 +97,7 @@ export default function ExpenseForm({ onAdd }: ExpenseFormProps) {
 
       <button
         type="submit"
-        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
       >
         Add Transaction
       </button>
