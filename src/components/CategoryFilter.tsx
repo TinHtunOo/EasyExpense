@@ -10,9 +10,10 @@ export default function CategoryFilter({
   onChange,
 }: CategoryFilterProps) {
   return (
-    <div className="mb-4">
+    <div className="mb-4 flex items-center justify-between">
+      <h3 className="text-lg font-medium">Transactions</h3>
       <select
-        className="border rounded px-3 py-2"
+        className="p-2 border rounded border-indigo-200 text-sm text-gray-500"
         value={selected}
         onChange={(e) => onChange(e.target.value)}
       >

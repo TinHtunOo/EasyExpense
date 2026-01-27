@@ -43,7 +43,7 @@ export default function ExpenseForm({ onAdd }: ExpenseFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className=" bg-white space-y-4 w-xl ">
       <div>
         <label className="block text-sm font-medium mb-1">Title</label>
         <input

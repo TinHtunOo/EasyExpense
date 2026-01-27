@@ -8,8 +8,8 @@ interface Props {
   expenses: Expense[];
 }
 
-export default function CategoryChart({ expenses }: Props) {
-  const [type, setType] = useState<ExpenseType>("expense");
+export default function ChartTwo({ expenses }: Props) {
+  const [type, setType] = useState<ExpenseType>("income");
 
   const data = useMemo(() => {
     const grouped = groupByCategory(expenses, type);
@@ -22,30 +22,11 @@ export default function CategoryChart({ expenses }: Props) {
   }, [expenses, type]);
 
   return (
-    <div className=" flex-1  rounded-lg mb-6">
-      <div className="flex sm:justify-between justify-center items-center mb-4 ">
-        <h2 className="font-medium  hidden sm:block">
-          {type === "expense" ? "Expense" : "Income"}
+    <div className=" flex-1 rounded-lg  mb-6 hidden sm:block ">
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="font-medium">
+          {type === "expense" ? "Expenses" : "Income"}
         </h2>
-
-        <div className="flex  sm:hidden rounded-md overflow-hidden">
-          <button
-            onClick={() => setType("expense")}
-            className={`px-3 py-1  text-sm ${
-              type === "expense" ? "bg-red-500 text-white" : "bg-gray-100"
-            }`}
-          >
-            Expense
-          </button>
-          <button
-            onClick={() => setType("income")}
-            className={`px-3 py-1  text-sm ${
-              type === "income" ? "bg-green-500 text-white" : "bg-gray-100"
-            }`}
-          >
-            Income
-          </button>
-        </div>
       </div>
 
       {data.length === 0 ? (
@@ -72,6 +53,7 @@ export default function CategoryChart({ expenses }: Props) {
                   />
                 ))}
               </Pie>
+
               <Legend
                 formatter={(value: string, entry: any) =>
                   `${value} (${entry.payload.percent.toFixed(1)}%)`
