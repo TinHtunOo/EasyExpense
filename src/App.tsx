@@ -7,7 +7,7 @@ import Summary from "./components/Summery";
 import CategoryFilter from "./components/CategoryFilter";
 import CategoryChart from "./components/CategotyChart";
 import ChartTwo from "./components/ChartTwo";
-import { Plus } from "lucide-react";
+import { Plus, X } from "lucide-react";
 
 export default function App() {
   const [expenses, setExpenses] = useState<Expense[]>(() => getExpenses());
@@ -36,12 +36,13 @@ export default function App() {
       {isModalOpen ? (
         <div>
           <div className="absolute top-0 right-0 h-screen w-screen z-20 bg-black/50"></div>
-          <div className="absolute top-20 right-0 left-0 m-auto w-fit bg-white p-4 z-21">
+          <div className="absolute top-20 right-0 left-0 m-auto max-w-lg bg-white sm:rounded-2xl   p-4 z-21">
+            <h3 className="text-base">New Transaction</h3>
             <button
-              className="absolute top-4 right-4"
+              className="absolute top-4 right-4 text-red-600 hover:cursor-pointer hover:text-red-700"
               onClick={() => setIsModalOpen(false)}
             >
-              X
+              <X />
             </button>
 
             <ExpenseForm onAdd={addExpense} />

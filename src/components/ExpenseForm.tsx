@@ -43,34 +43,34 @@ export default function ExpenseForm({ onAdd }: ExpenseFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className=" bg-white space-y-4 w-xl ">
-      <div>
-        <label className="block text-sm font-medium mb-1">Title</label>
+    <form onSubmit={handleSubmit} className=" bg-white space-y-4 mt-5 ">
+      <div className="flex justify-center items-center ">
+        {/* <label className="block text-lg font-medium min-w-30">Title:</label> */}
         <input
           type="text"
-          className="w-full border rounded px-3 py-2"
+          className="w-full bg-gray-100 rounded px-3 py-2 outline-0 focus:bg-gray-50"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="e.g. Lunch"
+          placeholder="Enter the title "
         />
       </div>
 
-      <div>
-        <label className="block text-sm font-medium mb-1">Amount</label>
+      <div className="flex justify-center items-center ">
+        {/* <label className="block text-lg font-medium min-w-30">Amount:</label> */}
         <input
           type="number"
-          className="w-full border rounded px-3 py-2"
+          className="w-full bg-gray-100 rounded px-3 py-2 outline-0 focus:bg-gray-50"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
-          placeholder="e.g. 25"
+          placeholder="Enter the amount"
         />
       </div>
 
-      <div className="flex gap-4">
-        <div className="flex-1">
-          <label className="block text-sm font-medium mb-1">Type</label>
+      <div className="flex justify-end flex-wrap gap-4">
+        <div className=" flex items-center gap-1">
+          <label className="block text-sm font-medium ">Type:</label>
           <select
-            className="w-full border rounded px-3 py-2"
+            className=" rounded p-2 bg-gray-100 text-sm text-gray-500 outline-0"
             value={type}
             onChange={(e) => setType(e.target.value as ExpenseType)}
           >
@@ -79,10 +79,10 @@ export default function ExpenseForm({ onAdd }: ExpenseFormProps) {
           </select>
         </div>
 
-        <div className="flex-1">
-          <label className="block text-sm font-medium mb-1">Category</label>
+        <div className="flex items-center gap-1">
+          <label className="block text-sm font-medium">Category:</label>
           <select
-            className="w-full border rounded px-3 py-2"
+            className="rounded p-2 bg-gray-100 text-sm text-gray-500 outline-0"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
@@ -94,13 +94,15 @@ export default function ExpenseForm({ onAdd }: ExpenseFormProps) {
           </select>
         </div>
       </div>
-
-      <button
-        type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-      >
-        Add Transaction
-      </button>
+      <div className="w-full border-b border-gray-400"></div>
+      <div className="text-end">
+        <button
+          type="submit"
+          className="bg-indigo-600 hover:cursor-pointer text-white px-4 py-2 rounded hover:bg-indigo-700"
+        >
+          Add
+        </button>
+      </div>
     </form>
   );
 }

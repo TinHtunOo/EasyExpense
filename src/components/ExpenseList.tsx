@@ -30,9 +30,12 @@ export default function ExpenseList({ expenses, onDelete }: ExpenseListProps) {
                 <p className="text-sm my-auto  text-gray-500 hidden sm:block">
                   {new Date(expense.date).toLocaleDateString()}
                 </p>
-                <p className="font-medium ">{expense.title}</p>
-
-                <p>{expense.category}</p>
+                <div className="flex items-center">
+                  <p className="font-medium ">{expense.title}</p>
+                </div>
+                <div className="flex items-center text-sm text-gray-400">
+                  <p>{expense.category}</p>
+                </div>
                 <div className="flex items-center justify-end gap-4">
                   <span className="text-red-600 font-medium">
                     ${expense.amount.toFixed(2)}
@@ -65,9 +68,12 @@ export default function ExpenseList({ expenses, onDelete }: ExpenseListProps) {
                 <p className="text-sm my-auto text-gray-500 hidden sm:block">
                   {new Date(expense.date).toLocaleDateString()}
                 </p>
-                <p className="font-medium ">{expense.title}</p>
-
-                <p>{expense.category}</p>
+                <div className="flex items-center">
+                  <p className="font-medium ">{expense.title}</p>
+                </div>
+                <div className="flex items-center text-sm text-gray-400">
+                  <p>{expense.category}</p>
+                </div>
                 <div className="flex items-center justify-end gap-4">
                   <span className="text-green-600 font-medium">
                     ${expense.amount.toFixed(2)}
