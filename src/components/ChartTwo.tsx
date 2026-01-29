@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function ChartTwo({ expenses }: Props) {
-  const [type, setType] = useState<ExpenseType>("income");
+  const [type] = useState<ExpenseType>("income");
 
   const data = useMemo(() => {
     const grouped = groupByCategory(expenses, type);
